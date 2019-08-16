@@ -337,7 +337,7 @@ body {
 .post-preview {
   width: 100%;
   height: max-content;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -766,7 +766,7 @@ body {
 }
 .index-container .index-middle {
   max-width: 920px;
-  min-height: 572px;
+  min-height: 550px;
   flex: 1;
 }
 @media screen and (max-width: 1180px) {
@@ -1106,8 +1106,8 @@ pre .javascript .function {
 .footer p {
   font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
   font-size: 10px;
-  margin-top: 10px;
-  margin-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-weight: 300;
   margin-right: 20px;
   word-break: break-all;
@@ -1133,7 +1133,7 @@ pre .javascript .function {
   color: #444444;
   font-size: 20px;
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 .list-inline.text-center li {
   display: inline-block;
