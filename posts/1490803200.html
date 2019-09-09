@@ -91,7 +91,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vlmcsd"><span class="toc-text">vlmcsd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows篇"><span class="toc-text">Windows篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Office篇"><span class="toc-text">Office篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录：KMS-Client-Setup-Keys"><span class="toc-text">附录：KMS Client Setup Keys</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-10"><span class="toc-text">Windows 10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-8-1"><span class="toc-text">Windows 8.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-8"><span class="toc-text">Windows 8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-7"><span class="toc-text">Windows 7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-Vista"><span class="toc-text">Windows Vista</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Office-2016"><span class="toc-text">Office 2016</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Office-2013"><span class="toc-text">Office 2013</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vlmcsd"><span class="toc-text">vlmcsd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows篇"><span class="toc-text">Windows篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Office篇"><span class="toc-text">Office篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录：KMS-Client-Setup-Keys"><span class="toc-text">附录：KMS Client Setup Keys</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-10"><span class="toc-text">Windows 10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-8-1"><span class="toc-text">Windows 8.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-8"><span class="toc-text">Windows 8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-7"><span class="toc-text">Windows 7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-Vista"><span class="toc-text">Windows Vista</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Office-2019"><span class="toc-text">Office 2019</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Office-2016"><span class="toc-text">Office 2016</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -144,21 +144,34 @@
 <p>7zip password is <strong>2017</strong></p>
 </blockquote>
 
-<p>在64位Linux服务器上搭建KMS模拟器只需运行binaries/Linux/intel/static/vlmcsd-x64-musl-static即可，其他环境类似，在此不再赘述。本站也搭建了KMS模拟器（www.wqy.ac.cn:1688）供实验使用。</p>
+<p>在64位Linux服务器上搭建KMS模拟器只需运行binaries/Linux/intel/static/vlmcsd-x64-musl-static即可，其他环境类似，在此不再赘述。本站也搭建了KMS模拟器（kms.ribo.fun:1688）供实验使用。</p>
 <p>另外，python版本的KMS模拟器也可在<a href="https://github.com/myanaloglife/py-kms" target="_blank" rel="noopener">GitHub</a>上找到。</p>
 <h2 id="Windows篇"><a href="#Windows篇" class="headerlink" title="Windows篇"></a>Windows篇</h2><p>本方法对Windows Vista/7/8/8.1/10有效。</p>
 <ol>
-<li>右键点击“开始菜单”，运行“PowerShell（管理员）”（对于操作系统版本10.0.15063及以上）或“（管理员）”（对于更低的操作系统版本）；</li>
+<li>右键点击“开始菜单”，运行“PowerShell（管理员）”（对于操作系统版本10.0.15063及以上）或“命令提示符（管理员）”（对于更低的操作系统版本）；</li>
 <li>输入“slmgr /dli”并回车，查看当前许可证信息，包括许可证版本和当前产品密钥的末5位；</li>
-<li>按照许可证版本与本文附录中对应的KMS密钥的末5位对照，若一致则跳至第步；</li>
+<li>按照许可证版本与本文附录中对应的KMS密钥的末5位对照，若一致则跳至第6步；</li>
 <li>输入“slmgr /upk XXXXX”（将XXXXX替换为当前产品密钥的末5位）并回车，卸载当前产品密钥；</li>
 <li>输入“slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX”（将XXXXX-XXXXX-XXXXX-XXXXX-XXXXX替换为正确的25位KMS密钥）并回车，安装新的产品密钥；</li>
-<li>输入“slmgr /skms &lt;KMS Server&gt;”（将&lt;KMS Server&gt;替换为你的KMS服务器，例如 www.wqy.ac.cn:1688）并回车，设置KMS服务器；</li>
+<li>输入“slmgr /skms &lt;KMS Server&gt;”（将&lt;KMS Server&gt;替换为你的KMS服务器，例如 kms.ribo.fun:1688）并回车，设置KMS服务器；</li>
 <li>输入“slmgr /ato”并回车，尝试利用KMS服务器激活；</li>
 <li>输入“slmgr /dli”并回车，查看激活状态（此步骤可选）。</li>
 </ol>
 <h2 id="Office篇"><a href="#Office篇" class="headerlink" title="Office篇"></a>Office篇</h2><p>日常不想更新..下次有空了在更 ヾ(o◕∀◕)ﾉヾ</p>
 <p>（2018.3.22 更新：叫我拖更小王子哈哈哈哈w）</p>
+<p>（2019.9.9 更新：Office篇）</p>
+<p>本方法对Office 2016/2019有效。</p>
+<ol>
+<li>在Office安装目录找到ospp.vbs；</li>
+<li>打开命令提示符（可能需要管理员权限），切换到包含ospp.vbs的目录；</li>
+<li>输入“cscript ospp.vbs /dstatus”并回车，查看当前许可证是VOLUME还是RETAIL通道，若为VOLUME通道可直接跳至第5步；</li>
+<li>若为RETAIL通道则根据需求输入以下命令，增加VOLUME通道：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Office Pro 2019</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_MAK_AE-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_MAK_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_MAK_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlus2019VL_MAK_AE-ul-phn.xrm-ms"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Project Pro 2019</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_KMS_Client_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_MAK_AE-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_MAK_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_MAK_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectPro2019VL_MAK_AE-ul-phn.xrm-ms"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Visio Pro 2019</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_KMS_Client_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_MAK_AE-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_MAK_AE-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_MAK_AE-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioPro2019VL_MAK_AE-ul-phn.xrm-ms"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Office Pro 2016</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_KMS_Client-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_KMS_Client-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_KMS_Client-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_MAK-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_MAK-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_MAK-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProPlusVL_MAK-ul-phn.xrm-ms"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Project Pro 2016</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_KMS_Client-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_KMS_Client-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_KMS_Client-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_MAK-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_MAK-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_MAK-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\ProjectProVL_MAK-ul-phn.xrm-ms"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Visio Pro 2016</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_KMS_Client-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_KMS_Client-ul.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_KMS_Client-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_MAK-pl.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_MAK-ppd.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_MAK-ul-oob.xrm-ms"</span></span><br><span class="line">cscript ospp.vbs /inslic:<span class="string">"..\root\Licenses16\VisioProVL_MAK-ul-phn.xrm-ms"</span></span><br></pre></td></tr></table></figure></li>
+<li>输入“cscript ospp.vbs /unpkey:XXXXX”（将XXXXX替换为当前产品密钥的末5位）并回车，卸载当前产品密钥；</li>
+<li>输入“cscript ospp.vbs /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX”（将XXXXX-XXXXX-XXXXX-XXXXX-XXXXX替换为正确的25位KMS密钥）并回车，安装新的产品密钥；</li>
+<li>输入“cscript ospp.vbs /sethst:&lt;KMS Server&gt;”（将&lt;KMS Server&gt;替换为你的KMS服务器，例如 kms.ribo.fun:1688）并回车，设置KMS服务器；</li>
+<li>输入“cscript ospp.vbs /act”并回车，尝试利用KMS服务器激活；</li>
+<li>输入“cscript ospp.vbs /dstatus”并回车，查看激活状态（此步骤可选）。</li>
+</ol>
 <h2 id="附录：KMS-Client-Setup-Keys"><a href="#附录：KMS-Client-Setup-Keys" class="headerlink" title="附录：KMS Client Setup Keys"></a>附录：KMS Client Setup Keys</h2><p>（以下表格在PC端显示效果最佳，完整表格请前往微软<a href="https://msdn.microsoft.com/en-us/library/jj612867.aspx" target="_blank" rel="noopener">MSDN Library</a>获得）</p>
 <h3 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h3><table>
 <thead>
@@ -186,18 +199,6 @@
 <tr>
 <td>Windows 10 Enterprise 2016 LTSB</td>
 <td align="center">DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td>
-</tr>
-<tr>
-<td>Windows 10 Core (non-official)</td>
-<td align="center">YTMG3-N6DKC-DKB77-7M9GH-8HVX7</td>
-</tr>
-<tr>
-<td>Windows 10 CoreSingleLanguage (non-official)</td>
-<td align="center">BT79Q-G7N6G-PGBYW-4YWX6-6F4BT</td>
-</tr>
-<tr>
-<td>Windows 10 CoreCountrySpecific (non-official)</td>
-<td align="center">N2434-X9D7W-8PF6X-8DV9T-8TYMD</td>
 </tr>
 </tbody></table>
 <h3 id="Windows-8-1"><a href="#Windows-8-1" class="headerlink" title="Windows 8.1"></a>Windows 8.1</h3><table>
@@ -264,6 +265,38 @@
 <td align="center">VKK3X-68KWM-X2YGT-QR4M6-4BWMV</td>
 </tr>
 </tbody></table>
+<h3 id="Office-2019"><a href="#Office-2019" class="headerlink" title="Office 2019"></a>Office 2019</h3><table>
+<thead>
+<tr>
+<th>SOFTWARE EDITION</th>
+<th align="center">KMS CLIENT SETUP KEY</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Office Pro Plus 2019</td>
+<td align="center">NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP</td>
+</tr>
+<tr>
+<td>Office Standard 2019</td>
+<td align="center">6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK</td>
+</tr>
+<tr>
+<td>Project Pro 2019</td>
+<td align="center">B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B</td>
+</tr>
+<tr>
+<td>Project Std 2019</td>
+<td align="center">C4F7P-NCP8C-6CQPT-MQHV9-JXD2M</td>
+</tr>
+<tr>
+<td>Visio Pro 2019</td>
+<td align="center">9BGNQ-K37YR-RQHF2-38RQ3-7VCBB</td>
+</tr>
+<tr>
+<td>Visio Std 2019</td>
+<td align="center">7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2</td>
+</tr>
+</tbody></table>
 <h3 id="Office-2016"><a href="#Office-2016" class="headerlink" title="Office 2016"></a>Office 2016</h3><table>
 <thead>
 <tr>
@@ -272,60 +305,28 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Office Professional Plus 2016</td>
+<td>Office Pro Plus 2016</td>
 <td align="center">XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99</td>
 </tr>
 <tr>
-<td>Office Standard 2016</td>
+<td>Office Std 2016</td>
 <td align="center">JNRGM-WHDWX-FJJG3-K47QV-DRTFM</td>
 </tr>
 <tr>
-<td>Project Professional 2016</td>
+<td>Project Pro 2016</td>
 <td align="center">YG9NW-3K39V-2T3HJ-93F3Q-G83KT</td>
 </tr>
 <tr>
-<td>Project Standard 2016</td>
+<td>Project Std 2016</td>
 <td align="center">GNFHQ-F6YQM-KQDGJ-327XX-KQBVC</td>
 </tr>
 <tr>
-<td>Visio Professional 2016</td>
+<td>Visio Pro 2016</td>
 <td align="center">PD3PC-RHNGV-FXJ29-8JK7D-RJRJK</td>
 </tr>
 <tr>
-<td>Visio Standard 2016</td>
+<td>Visio Std 2016</td>
 <td align="center">7WHWN-4T7MP-G96JF-G33KR-W8GF4</td>
-</tr>
-</tbody></table>
-<h3 id="Office-2013"><a href="#Office-2013" class="headerlink" title="Office 2013"></a>Office 2013</h3><table>
-<thead>
-<tr>
-<th>SOFTWARE EDITION</th>
-<th align="center">KMS CLIENT SETUP KEY</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Office Professional Plus 2013</td>
-<td align="center">YC7DK-G2NP3-2QQC3-J6H88-GVGXT</td>
-</tr>
-<tr>
-<td>Office Standard 2013</td>
-<td align="center">KBKQT-2NMXY-JJWGP-M62JB-92CD4</td>
-</tr>
-<tr>
-<td>Project Professional 2013</td>
-<td align="center">FN8TT-7WMH6-2D4X9-M337T-2342K</td>
-</tr>
-<tr>
-<td>Project Standard 2013</td>
-<td align="center">6NTH3-CW976-3G3Y2-JK3TX-8QHTT</td>
-</tr>
-<tr>
-<td>Visio Professional 2013</td>
-<td align="center">C2FG9-N6J68-H8BTJ-BW3QX-RM3B3</td>
-</tr>
-<tr>
-<td>Visio Standard 2013</td>
-<td align="center">J484Y-4NKBF-W2HMG-DBMJC-PGWR7</td>
 </tr>
 </tbody></table>
 
