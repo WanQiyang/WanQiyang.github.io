@@ -11,7 +11,7 @@
 
     <title>
         
-        Ribo =w=
+        IPv6跳板服务器配置指南（2019） - Ribo =w=
         
     </title>
 
@@ -66,8 +66,8 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
-                <a href="">
+            <li >
+                <a href="../archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
@@ -89,6 +89,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装shadowsocks-libev"><span class="toc-text">安装shadowsocks-libev</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑配置文件"><span class="toc-text">编辑配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台运行shadowsocks-libev"><span class="toc-text">后台运行shadowsocks-libev</span></a></li></ol>
+</div>
     
 </div>
 
@@ -116,100 +120,44 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        IPv6跳板服务器配置指南（2019）
+    </div>
 
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
+    <div class="post-meta">
+        <span class="attr">发布于 <span>2019-09-11 00:11:47</span></span>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-11</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/posts/1568131907.html">
-                        <span>
-                            IPv6跳板服务器配置指南（2019）
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        </span>
+        <span class="attr">浏览 <span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>之前的教程步骤较复杂，更新一个精简版，针对步骤做了一些优化。</p>
+<p>环境：Ubuntu 18.10</p>
+<h2 id="安装shadowsocks-libev"><a href="#安装shadowsocks-libev" class="headerlink" title="安装shadowsocks-libev"></a>安装shadowsocks-libev</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install shadowsocks-libev</span><br></pre></td></tr></table></figure>
 
-    </ul>
-</div>
+<h2 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2><p>编辑文件 /etc/shadowsocks-libev/config.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:[<span class="string">"::0"</span>,<span class="string">"0.0.0.0"</span>],</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"mypassword"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">60</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"xchacha20-ietf-poly1305"</span>,</span><br><span class="line">    <span class="attr">"fastopen"</span>:<span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"mode"</span>:<span class="string">"tcp_and_udp"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-30</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/posts/1522339200.html">
-                        <span>
-                            IPv6跳板服务器配置指南
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-29</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/posts/1522252800.html">
-                        <span>
-                            手动强制同步OneDrive
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+<p>将其中mypassword改为你设置的密码，同时建议将server_port修改一下。</p>
+<h2 id="后台运行shadowsocks-libev"><a href="#后台运行shadowsocks-libev" class="headerlink" title="后台运行shadowsocks-libev"></a>后台运行shadowsocks-libev</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss-server -c /etc/shadowsocks-libev/config.json -f shadowsocks.pid</span><br></pre></td></tr></table></figure>
 
-    </ul>
-</div>
+<p>shadowsocks-libev将会在后台运行（即使断开SSH链接也不会终止），pid会保存在当前工作目录的shadowsocks.pid文件中。</p>
+<p>至此shadowsocks-libev的配置就结束了，可以尝试使用客户端进行连接。</p>
+<p>如果需要服务器重启后仍旧运行，则需要将上述命令加入启动脚本，由于系统不同方法也不同，在此不再赘述。</p>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
-                    <span class="tag-text">2017</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-30</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/posts/1490803200.html">
-                        <span>
-                            vlmcsd实战
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
-    </ul>
-</div>
+        <div id="lv-container">
+        </div>
 
+    </div>
 </div>
 
     </div>
@@ -262,7 +210,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/index.js"></script>
