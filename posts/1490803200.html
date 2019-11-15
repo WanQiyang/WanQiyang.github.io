@@ -150,9 +150,7 @@
 <h2 id="Windows篇"><a href="#Windows篇" class="headerlink" title="Windows篇"></a>Windows篇</h2><p>本方法对Windows Vista/7/8/8.1/10有效。</p>
 <ol>
 <li>右键点击“开始菜单”，运行“PowerShell（管理员）”（对于操作系统版本10.0.15063及以上）或“命令提示符（管理员）”（对于更低的操作系统版本）；</li>
-<li>输入“slmgr /dli”并回车，查看当前许可证信息，包括许可证版本和当前产品密钥的末5位；</li>
-<li>按照许可证版本与本文附录中对应的KMS密钥的末5位对照，若一致则跳至第6步；</li>
-<li>输入“slmgr /upk XXXXX”（将XXXXX替换为当前产品密钥的末5位）并回车，卸载当前产品密钥；</li>
+<li>输入“slmgr /upk”并回车，卸载当前产品密钥；</li>
 <li>输入“slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX”（将XXXXX-XXXXX-XXXXX-XXXXX-XXXXX替换为正确的25位KMS密钥）并回车，安装新的产品密钥；</li>
 <li>输入“slmgr /skms &lt;KMS Server&gt;”（将&lt;KMS Server&gt;替换为你的KMS服务器，例如 kms.ribo.fun:1688）并回车，设置KMS服务器；</li>
 <li>输入“slmgr /ato”并回车，尝试利用KMS服务器激活；</li>
@@ -278,7 +276,7 @@
 <td align="center">NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP</td>
 </tr>
 <tr>
-<td>Office Standard 2019</td>
+<td>Office Std 2019</td>
 <td align="center">6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK</td>
 </tr>
 <tr>
