@@ -11,13 +11,13 @@
 
     <title>
         
-        ribo
+        Windows Terminal - ribo
         
     </title>
 
     <!-- Custom CSS -->
     <script>document.write('<link rel="stylesheet" href="//' + document.domain + '/css/aircloud.css">')</script>
-    <!--<link rel="stylesheet" href="../../css/aircloud.css">-->
+    <!--<link rel="stylesheet" href="../css/aircloud.css">-->
     
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
@@ -55,27 +55,27 @@
     <div class="contents" id="nav-content">
         <ul>
             <li >
-                <a href="../../index.html">
+                <a href="../index.html">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
             <!--
             <li >
-                <a href="../../tags/index.html">
+                <a href="../tags/index.html">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
-                <a href="../index.html">
+            <li >
+                <a href="../archives/index.html">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
             -->
             <li >
-                <a href="../../about/index.html">
+                <a href="../about/index.html">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
                 </a>
@@ -90,6 +90,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置默认shell，隐藏不需要的shell"><span class="toc-text">设置默认shell，隐藏不需要的shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在当前窗口启动终端"><span class="toc-text">在当前窗口启动终端</span></a></li></ol>
+</div>
     
 </div>
 
@@ -117,125 +121,42 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        Windows Terminal
+    </div>
 
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-                    <span class="tag-text">2020</span>
-                </span>
-    <ul>
+    <div class="post-meta">
+        <span class="attr">发布于 <span>2020-05-17 15:19:56</span></span>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>05-17</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="../../posts/1589699996.html">
-                        <span>
-                            Windows Terminal
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        </span>
+        <span class="attr">浏览 <span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>天下苦windows自带的终端cmd久矣，最近看到了微软发布的Windows Terminal的宣传视频，虽然还没有正式发布，但吃螃蟹的精神还是必要的！（虽然已经发布很久了而且我记得之前尝试过 =w=）</p>
+<img src="/posts/1589699996/01.png" title="Windows Terminal">
 
-    </ul>
-</div>
+<p>经过简单的配置增强了易用性，现把设置的过程在这里分享给大家！（操作系统版本：10.0.19041.264）</p>
+<h2 id="设置默认shell，隐藏不需要的shell"><a href="#设置默认shell，隐藏不需要的shell" class="headerlink" title="设置默认shell，隐藏不需要的shell"></a>设置默认shell，隐藏不需要的shell</h2><p>Windows Terminal的默认shell是powershell，可以在设置文件setting.json内更改defaultProfile项的guid来换成别的。另外，我没有使用Azure Cloud Shell的习惯，可以更改Azure Cloud Shell处的hide设置项来隐藏它。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"hidden": true</span><br></pre></td></tr></table></figure>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-11</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="../../posts/1568131907.html">
-                        <span>
-                            IPv6跳板服务器配置指南（2019）
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+<h2 id="在当前窗口启动终端"><a href="#在当前窗口启动终端" class="headerlink" title="在当前窗口启动终端"></a>在当前窗口启动终端</h2><p>cmd时代直接在地址栏输入cmd回车即可在当前目录启动终端，Windows Terminal仍然可以在地址栏输入wt，但启动时的默认路径却是固定的。解决方法是在设置文件settings.json的Command Prompt处增加设置项</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"startingDirectory": "."</span><br></pre></td></tr></table></figure>
 
-    </ul>
-</div>
+<p>另外，增加这个设置后，在终端窗口内点击加号（或者使用Ctrl+Shift+T）新建tab时也会在当前目录启动，十分方便！</p>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-30</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="../../posts/1522339200.html">
-                        <span>
-                            IPv6跳板服务器配置指南
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-29</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="../../posts/1522252800.html">
-                        <span>
-                            手动强制同步OneDrive
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
-    </ul>
-</div>
+        <div id="lv-container">
+        </div>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
-                    <span class="tag-text">2017</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>03-30</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="../../posts/1490803200.html">
-                        <span>
-                            vlmcsd实战
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
+    </div>
 </div>
 
     </div>
@@ -285,11 +206,11 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>document.write('<script src="//' + document.domain + '/js/index.js"></' + 'script>')</script>
-<!--<script src="../../js/index.js"></script>-->
+<!--<script src="../js/index.js"></script>-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script async src='//s11.cnzz.com/z_stat.php?id=1258494313&show=pic1'></script>
 
